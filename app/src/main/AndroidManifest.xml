@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UserPlaylists">
-        <activity android:name=".views.UserDetailsActivity"></activity>
-        <activity android:name=".views.MainActivity">
+        <activity android:name=".user_details.UserDetailsActivity" />
+        <activity android:name=".home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,5 +18,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

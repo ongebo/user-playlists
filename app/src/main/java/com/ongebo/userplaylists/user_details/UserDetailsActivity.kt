@@ -1,4 +1,4 @@
-package com.ongebo.userplaylists.views
+package com.ongebo.userplaylists.user_details
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

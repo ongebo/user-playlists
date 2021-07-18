@@ -1,4 +1,4 @@
-package com.ongebo.userplaylists.views
+package com.ongebo.userplaylists.home
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

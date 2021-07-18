@@ -1,4 +1,4 @@
-package com.ongebo.userplaylists.view_models
+package com.ongebo.userplaylists.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

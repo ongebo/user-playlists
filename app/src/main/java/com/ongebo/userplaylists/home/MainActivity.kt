@@ -1,4 +1,4 @@
-package com.ongebo.userplaylists.views
+package com.ongebo.userplaylists.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ongebo.userplaylists.databinding.ActivityMainBinding
 import com.ongebo.userplaylists.db.AppDatabase
-import com.ongebo.userplaylists.view_models.MainViewModel
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
