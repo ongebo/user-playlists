@@ -9,29 +9,21 @@ import com.ongebo.userplaylists.db.AppDatabase
 import com.ongebo.userplaylists.view_models.MainViewModel
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var db: AppDatabase
-    private lateinit var viewModel: MainViewModel
+    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private val db by lazy { AppDatabase.getDatabase(this) }
+    private val viewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        init()
         viewModel.setObserversAndGetData()
-    }
-
-    private fun init() {
-        db = AppDatabase.getDatabase(this)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
     }
 
     private fun MainViewModel.setObserversAndGetData() {
         usersAndPlaylists.observe(this@MainActivity) {
             binding.rvUserPlaylists.apply {
-                setHasFixedSize(true)
                 layoutManager = LinearLayoutManager(this@MainActivity)
+                setHasFixedSize(true)
                 adapter = MainAdapter(it)
             }
         }
