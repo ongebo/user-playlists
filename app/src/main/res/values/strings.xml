@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">User Playlists</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="label_add">Add</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_enter_user_details">Enter User Details</string>
+    <string name="hint_sex">Sex</string>
+    <string name="prompt_valid_info">Enter valid information</string>
 </resources>

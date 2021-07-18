@@ -4,11 +4,12 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.ongebo.userplaylists.R
 import com.ongebo.userplaylists.databinding.UserPlaylistsBinding
 import com.ongebo.userplaylists.db.relationships.UserAndPlaylist
 import com.ongebo.userplaylists.utils.AppViewHolder
 
-class MainAdapter(private val userPlaylists: List<UserAndPlaylist>) :
+class UsersAdapter(private val userPlaylists: List<UserAndPlaylist>) :
     RecyclerView.Adapter<AppViewHolder>() {
 
     private lateinit var binding: UserPlaylistsBinding
@@ -17,8 +18,9 @@ class MainAdapter(private val userPlaylists: List<UserAndPlaylist>) :
         parent: ViewGroup,
         viewType: Int
     ): AppViewHolder {
-        binding =
-            UserPlaylistsBinding.inflate(LayoutInflater.from(parent.context))
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.user_playlists, parent, false)
+        binding = UserPlaylistsBinding.bind(view)
         return AppViewHolder(binding.root)
     }
 
@@ -37,7 +39,11 @@ class MainAdapter(private val userPlaylists: List<UserAndPlaylist>) :
         for (playlist in playlists) {
             playlistString += "${playlist.playlistName}, "
         }
-        return playlistString.substring(0, playlistString.length - 2)
+        return if (playlistString.endsWith(", "))
+            playlistString.substring(
+                0,
+                playlistString.length - 2
+            ) else playlistString
     }
 
     override fun getItemCount(): Int = userPlaylists.size
