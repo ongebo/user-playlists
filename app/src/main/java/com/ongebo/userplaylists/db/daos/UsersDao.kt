@@ -19,7 +19,7 @@ interface UsersDao {
     @Query("SELECT * FROM users")
     suspend fun getUsers(): List<User>
 
-    @Query("SELECT * FROM users WHERE id = :userId")
+    @Query("SELECT * FROM users WHERE user_id = :userId")
     suspend fun getUser(userId: Int): User
 
     @Transaction
@@ -27,6 +27,6 @@ interface UsersDao {
     suspend fun getUsersAndPlaylists(): List<UserAndPlaylist>
 
     @Transaction
-    @Query("SELECT * FROM users WHERE id = :userId")
+    @Query("SELECT * FROM users WHERE user_id = :userId")
     suspend fun getUserAndPlaylist(userId: Int): UserAndPlaylist
 }

@@ -19,12 +19,12 @@ interface PlaylistsDao {
     @Query("SELECT * FROM playlists")
     suspend fun getPlaylists(): List<Playlist>
 
-    @Query("SELECT * FROM playlists WHERE id = :playlistId")
+    @Query("SELECT * FROM playlists WHERE playlist_id = :playlistId")
     suspend fun getPlaylist(playlistId: Int): Playlist
 
     @Query("SELECT * FROM playlists")
     suspend fun getPlaylistsAndSongs(): List<PlaylistAndSong>
 
-    @Query("SELECT * FROM playlists WHERE id = :playlistId")
+    @Query("SELECT * FROM playlists WHERE playlist_id = :playlistId")
     suspend fun getPlaylistAndSongs(playlistId: Int): PlaylistAndSong
 }

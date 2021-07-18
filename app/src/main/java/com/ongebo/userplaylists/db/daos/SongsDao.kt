@@ -16,8 +16,8 @@ interface SongsDao {
     suspend fun deleteSong(song: Song)
 
     @Query("SELECT * FROM songs")
-    suspend fun getSongs()
+    suspend fun getSongs(): List<Song>
 
-    @Query("SELECT * FROM songs WHERE id = :songId")
-    suspend fun getSong(songId: Int)
+    @Query("SELECT * FROM songs WHERE song_id = :songId")
+    suspend fun getSong(songId: Int): Song
 }

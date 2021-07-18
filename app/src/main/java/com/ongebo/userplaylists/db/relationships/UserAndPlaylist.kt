@@ -9,8 +9,8 @@ data class UserAndPlaylist(
     @Embedded val user: User,
 
     @Relation(
-        parentColumn = "id",
-        entityColumn = "user_id"
+        parentColumn = "user_id",
+        entityColumn = "owner_id"
     )
     val playlists: List<Playlist>
 )
