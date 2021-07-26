@@ -3,6 +3,7 @@ package com.ongebo.userplaylists.home
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.ongebo.userplaylists.R
 import com.ongebo.userplaylists.databinding.UserPlaylistsBinding
@@ -30,6 +31,13 @@ class UsersAdapter(private val userPlaylists: List<UserAndPlaylist>) :
             userPlaylists[position].apply {
                 tvUsername.text = "${user.firstName} ${user.lastName}"
                 tvPlaylists.text = getPlaylistString()
+            }
+
+            playlistCard.setOnClickListener {
+
+                // TODO: Pass SafeArgs
+                root.findNavController()
+                    .navigate(R.id.action_homeFragment_to_userDetailsFragment)
             }
         }
     }
