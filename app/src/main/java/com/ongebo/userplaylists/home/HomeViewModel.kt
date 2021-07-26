@@ -8,7 +8,7 @@ import com.ongebo.userplaylists.db.entities.User
 import com.ongebo.userplaylists.db.relationships.UserAndPlaylist
 import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
 
     val usersAndPlaylists = MutableLiveData<List<UserAndPlaylist>>()
 
